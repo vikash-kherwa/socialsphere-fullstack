@@ -1,8 +1,6 @@
-# 🌐 SocialSphere – Full Stack Social Media App
+# 🌐 SocialSphere Full Stack
 
-A full-stack social media application where users can create posts, upload images, add hashtags, view community posts, and delete posts in real time.
-
-Built with React, Express, MongoDB, and ImageKit cloud storage.
+A full-stack social media web application where users can create posts, upload images, view community posts, and delete posts in real time.
 
 ## 🚀 Live Demo
 
@@ -13,14 +11,12 @@ Built with React, Express, MongoDB, and ImageKit cloud storage.
 ## ✨ Features
 
 * Create new posts
-* Upload images using ImageKit
-* Add hashtags/tags
-* Display username and post date
+* Upload images using ImageKit Cloud Storage
+* View all posts from MongoDB
 * Delete posts
-* Real-time updates without page refresh
-* Cloud image storage
-* MongoDB database integration
+* User ID and timestamp display
 * Responsive Bootstrap UI
+* Real-time updates using React Context API
 
 ## 🛠️ Tech Stack
 
@@ -30,8 +26,8 @@ Built with React, Express, MongoDB, and ImageKit cloud storage.
 * Vite
 * Bootstrap
 * Axios
-* React Context API
-* useReducer
+* Context API
+* React Icons
 
 ### Backend
 
@@ -43,39 +39,40 @@ Built with React, Express, MongoDB, and ImageKit cloud storage.
 
 ### Cloud Services
 
-* ImageKit
-* Render
-* Vercel
+* ImageKit (Image Storage)
+* Render (Backend Hosting)
+* Vercel (Frontend Hosting)
 
 ## 📸 Screenshots
 
-### Feed
+### Feed Page
 
 ![Feed](screenshots/feed.png)
 
-### Create Post
+### Create Post Page
 
 ![Create Post](screenshots/create-post.png)
 
 ## 📂 Project Structure
 
 ```text
-socialsphere-fullstack/
-│
-├── backend/
-│   ├── src/
-│   ├── models/
-│   ├── middleware/
+socialsphere-fullstack
+├── backend
+│   ├── models
+│   ├── routes
 │   └── server.js
 │
-├── src/
-├── public/
-├── screenshots/
-│   ├── feed.png
-│   └── createpostss.png
+├── public
+├── src
+│   ├── components
+│   ├── store
+│   └── assets
 │
-├── package.json
-└── README.md
+├── screenshots
+│   ├── feed.png
+│   └── create-post.png
+│
+└── package.json
 ```
 
 ## ▶️ Run Locally
@@ -95,26 +92,16 @@ npm install
 npm start
 ```
 
-Create a `.env` file inside the backend folder:
+## 📚 Key Learnings
 
-```env
-MONGO_URI=your_mongodb_connection_string
-IMAGEKIT_PUBLIC_KEY=your_public_key
-IMAGEKIT_PRIVATE_KEY=your_private_key
-IMAGEKIT_URL_ENDPOINT=your_url_endpoint
-```
-
-## 📌 Key Learnings
-
-* Building a complete MERN-style application
-* REST API development with Express
-* MongoDB data modeling using Mongoose
-* Image uploads using Multer and ImageKit
-* React Context API state management
-* CRUD operations
-* Frontend and backend deployment
-* Environment variable management
-* Production deployment with Render and Vercel
+* Building a full-stack React application
+* Creating REST APIs with Express
+* MongoDB integration using Mongoose
+* Image uploads with Multer
+* Cloud image hosting with ImageKit
+* State management using Context API and useReducer
+* Deploying applications using Render and Vercel
+* Working with real-world CRUD operations
 
 ## 🔗 GitHub Repository
 
