@@ -28,7 +28,7 @@ const PostListProvider = ({ children }) => {
   const [postList, dispatchPostList] = useReducer(postListReducer, []);
   const addPost = async (postData) => {
     try {
-      const res = await axios.post("http://localhost:5000/posts", postData);
+      const res = await axios.post("https://socialsphere-backend-bqqz.onrender.com/posts", postData);
 
       dispatchPostList({
         type: "ADD_POST",
@@ -50,7 +50,7 @@ const PostListProvider = ({ children }) => {
 
   const deletePost = async (postId) => {
     try {
-      await axios.delete(`http://localhost:5000/posts/${postId}`);
+      await axios.delete(`https://socialsphere-backend-bqqz.onrender.com/posts/${postId}`);
 
       dispatchPostList({
         type: "DELETE_POST",

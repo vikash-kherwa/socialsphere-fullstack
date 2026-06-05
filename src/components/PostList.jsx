@@ -16,7 +16,7 @@ const PostList = () => {
     const signal = controller.signal;
 
     axios
-    .get("http://localhost:5000/posts")
+    .get("https://socialsphere-backend-bqqz.onrender.com/posts")
     .then((res)=>{
       addInitialPosts(res.data);
       setFetching(false);
