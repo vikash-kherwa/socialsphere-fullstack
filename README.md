@@ -55,7 +55,7 @@ Built with React, Express, MongoDB, and ImageKit cloud storage.
 
 ### Create Post
 
-![Create Post](screenshots/createpostss.png)
+![Create Post](screenshots/create-post.png)
 
 ## 📂 Project Structure
 
