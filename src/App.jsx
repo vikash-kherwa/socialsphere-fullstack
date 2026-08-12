@@ -6,14 +6,26 @@ import Sidebar from "./components/Sidebar";
 import CreatePost from "./components/CreatePost";
 import PostList from "./components/PostList";
 import { useState } from "react";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import PostListProvider from "./store/post-list-store";
 
 function App() {
-  const [selectedTab, setSelectedTab] = useState("Home");
+  const location = useLocation();
+  const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  const selectedTab =
+    location.pathname === "/create-post" ? "Create Post" : "Home";
+
   const handleSelectTab = (tab) => {
-    setSelectedTab(tab);
+    const nextPath = tab === "Create Post" ? "/create-post" : "/";
+    navigate(nextPath);
     setIsSidebarOpen(false);
   };
 
@@ -37,11 +49,12 @@ function App() {
             onToggleSidebar={() => setIsSidebarOpen((prev) => !prev)}
             isSidebarOpen={isSidebarOpen}
           ></Header>
-          {selectedTab === "Home" ? (
-            <PostList></PostList>
-          ) : (
-            <CreatePost></CreatePost>
-          )}
+
+          <Routes>
+            <Route path="/" element={<PostList />} />
+            <Route path="/create-post" element={<CreatePost />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
 
           <Footer></Footer>
         </div>
